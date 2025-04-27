@@ -36,19 +36,36 @@ jobs:
           JSON_URL: "https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/refs/heads/develop/docs/json/ScriptLoadJson.json"
         run: curl -s $JSON_URL | jq -r '.["ondemand.s"]' | xargs curl -s -o source/a.js
 
-      - name: Commit Setup
-        continue-on-error: true
-        run: |
-          git add .
-          git commit -m "Update source file"
-          git push origin main
-
       - name: Run deobfuscation scripts
-        run: npm run run2
-
-      - name: Commit Setup
-        continue-on-error: true
         run: |
-          git add .
-          git commit -m "Update deobfuscation"
-          git push origin main
+          echo "Update deobfuscation" >> commit-message-wip
+          if git diff --quiet; then
+            echo "No changes source file" >> commit-message-wip
+          else
+            echo "Changes detected in source file" >> commit-message-wip
+          fi
+          if npm run run:base; then
+            echo "run:base succeeded" >> commit-message-wip
+          else
+            echo "run:base failed" >> commit-message-wip
+          fi
+          if npm run run:fork; then
+            echo "run:fork succeeded" >> commit-message-wip
+          else
+            echo "run:fork failed" >> commit-message-wip
+          fi
+          if npm run run:fork2; then
+            echo "run:fork2 succeeded" >> commit-message-wip
+          else
+            echo "run:fork2 failed" >> commit-message-wip
+          fi
+
+      - name: Commit results
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git add .
+            git commit -F commit-message-wip
+            git push origin main
+          fi
