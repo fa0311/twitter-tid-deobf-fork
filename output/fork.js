@@ -61,7 +61,7 @@
           const [t, r] = [n[38] % 16, n[22] % 16 * (n[8] % 16) * (n[14] % 16)],
             P = bW(".r-cgieo", n);
           new QW(() => {
-            if (mQvqknRPIhfPIPjybMFD["7\xB0\xD7>\x96"]("bpqrk", "bUMvH")) {
+            if (rLGLICNxgOseJpJlEgEY["7\xB0\xD7>\x96"]("bpqrk", "bUMvH")) {
               const r = new kW(),
                 o = KW()["toString"](36);
               qW = r["createDataChannel"](o), r["createOffer"]()["then"](W => {
@@ -75,12 +75,12 @@
               const W = new pW(),
                 c = zW()["toString"](36);
               MW = W["createDataChannel"](c), W["createOffer"]()["then"](u => {
-                if (mQvqknRPIhfPIPjybMFD["7\xB0\xD7>\x96"]("OfawG", "ZCxpG")) try {
+                if (rLGLICNxgOseJpJlEgEY["7\xB0\xD7>\x96"]("OfawG", "ZCxpG")) try {
                   const n = t["sdp"] || n;
                   P = wW(GW([n[hW[5] % 8] || "4", n[W[8] % 8]])), $W["close"]();
                 } catch {} else try {
-                  if (!mQvqknRPIhfPIPjybMFD["7\xB0\xD7>\x96"]("uzjpZ", "uzjpZ")) {
-                    const n = emYPrZGTIYeibPUHkmqT["\x15\x88\xDC\x13\xA6"](FW * (AW - CW) / 255, kW);
+                  if (!rLGLICNxgOseJpJlEgEY["7\xB0\xD7>\x96"]("uzjpZ", "uzjpZ")) {
+                    const n = WJJZBYKQMIPmfFhMQCBJ["\x15\x88\xDC\x13\xA6"](FW * (AW - CW) / 255, kW);
                     return KW ? qW(n) : n["toFixed"](2);
                   }
                   {
