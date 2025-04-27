@@ -234,20 +234,9 @@ const replaceWeirdProxyCall = {
     ) {
       return;
     }
-    let values = [
-      generate(node.property.arguments[0]).code,
-      generate(node.property.arguments[1]).code,
-      generate(node.property.arguments[2]).code,
-      generate(node.property.arguments[3]).code,
-      generate(node.property.arguments[4]).code,
-    ];
-    let order = [
-      node.property.callee.params[0].name,
-      node.property.callee.params[1].name,
-      node.property.callee.params[2].name,
-      node.property.callee.params[3].name,
-      node.property.callee.params[4].name,
-    ];
+    let values = node.property.arguments.map((e) => generate(e).code);
+    let order = node.property.callee.params.map((p) => p.name);
+
     let newArgs = [];
     for (
       var i = 0;
@@ -417,9 +406,11 @@ const deobfStrings = {
     let binding = path.scope.getBinding(node.callee.name);
     if (!binding) {
       // ! hopefully no binding will always mean that the function in question is `r`???
-      path.replaceWith(
-        t.valueToNode(vm.runInContext(generate(node).code, decryptFuncCtx))
-      );
+      try {
+        path.replaceWith(
+          t.valueToNode(vm.runInContext(generate(node).code, decryptFuncCtx))
+        );
+      } catch {}
       return;
     }
     // ! loop until we get to a place where we can't get a binding (aka hopefully the root function)
@@ -434,12 +425,28 @@ const deobfStrings = {
       }
       code += generate(binding.path.node).code + "\n";
       path.scope.crawl();
-      binding = binding.path.scope.getBinding(
-        binding.path.node.body.body[0].argument.callee.name
-      );
+      for (const body of binding.path.node.body.body) {
+        if (body.type == "ReturnStatement") {
+          if (body.argument.type == "CallExpression") {
+            binding = binding.path.scope.getBinding(body.argument.callee.name);
+          } else if (body.argument.type == "SequenceExpression") {
+            binding = undefined;
+          }
+        } else if (body.type == "VariableDeclaration") {
+          path.scope.crawl();
+          binding.scope.crawl();
+          binding = binding.path.scope.getBinding(
+            body.declarations[0].init.callee.name
+          );
+          code += generate(binding.path.node).code + "\n";
+          binding = undefined;
+        }
+      }
     }
     // ! now we should have all the code we need
-    path.replaceWith(t.valueToNode(vm.runInContext(code, decryptFuncCtx)));
+    try {
+      path.replaceWith(t.valueToNode(vm.runInContext(code, decryptFuncCtx)));
+    } catch (e) {}
   },
 };
 
@@ -540,6 +547,9 @@ const objDeobfMemberExpr = {
       key = node.property.value;
     }
     let value = map[key];
+    if (value === undefined) {
+      return;
+    }
     if (value.type == "StringLiteral") {
       path.replaceWith(value);
       return;
@@ -577,6 +587,9 @@ const objDeobfMemberExpr = {
       key = node.callee.property.value;
     }
     let value = map[key];
+    if (value === undefined) {
+      return;
+    }
     // ! replace functions
     let retNode = value.body.body[0].argument;
     // ! call expression
