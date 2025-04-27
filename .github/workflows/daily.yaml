@@ -54,10 +54,10 @@ jobs:
           else
             echo "run:fork failed" >> commit-message-wip
           fi
-          if npm run run:fork2; then
-            echo "run:fork2 succeeded" >> commit-message-wip
+          if npm run run:additional; then
+            echo "run:additional succeeded" >> commit-message-wip
           else
-            echo "run:fork2 failed" >> commit-message-wip
+            echo "run:additional failed" >> commit-message-wip
           fi
 
       - name: Commit results

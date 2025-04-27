@@ -5,9 +5,10 @@
   "main": "deobf.js",
   "scripts": {
     "run:base": "node deobf.js source/a.js output/deobf.js",
-    "run:fork": "node deobf-fork.js source/a.js output/fork.js && node deobf-additional.js output/fork.js output/additional.js",
-    "run:fork2": "npm run run:fork && npm run run:fork:_",
-    "run:fork:_": "node deobf-fork.js output/additional.js output/additional2.js && node deobf-additional.js output/additional2.js output/additional2.js"
+    "run:fork": "node deobf-fork.js source/a.js output/fork.js",
+    "run:additional": "npm run run:additional:1 && npm run run:additional:2",
+    "run:additional:1": "node deobf-fork.js source/a.js output/additional.js && node deobf-additional.js output/additional.js output/additional.js",
+    "run:additional:2": "node deobf-fork.js output/additional.js output/additional2.js && node deobf-additional.js output/additional2.js output/additional2.js"
   },
   "author": "",
   "license": "ISC",
