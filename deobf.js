@@ -434,28 +434,12 @@ const deobfStrings = {
       }
       code += generate(binding.path.node).code + "\n";
       path.scope.crawl();
-      for (const body of binding.path.node.body.body) {
-        if (body.type == "ReturnStatement") {
-          if (body.argument.type == "CallExpression") {
-            binding = binding.path.scope.getBinding(body.argument.callee.name);
-          } else if (body.argument.type == "SequenceExpression") {
-            binding = undefined;
-          }
-        } else if (body.type == "VariableDeclaration") {
-          path.scope.crawl();
-          binding.scope.crawl();
-          binding = binding.path.scope.getBinding(
-            body.declarations[0].init.callee.name
-          );
-          code += generate(binding.path.node).code + "\n";
-          binding = undefined;
-        }
-      }
+      binding = binding.path.scope.getBinding(
+        binding.path.node.body.body[0].argument.callee.name
+      );
     }
     // ! now we should have all the code we need
-    try {
-      path.replaceWith(t.valueToNode(vm.runInContext(code, decryptFuncCtx)));
-    } catch (e) {}
+    path.replaceWith(t.valueToNode(vm.runInContext(code, decryptFuncCtx)));
   },
 };
 
@@ -556,9 +540,6 @@ const objDeobfMemberExpr = {
       key = node.property.value;
     }
     let value = map[key];
-    if (value === undefined) {
-      return;
-    }
     if (value.type == "StringLiteral") {
       path.replaceWith(value);
       return;
@@ -596,9 +577,6 @@ const objDeobfMemberExpr = {
       key = node.callee.property.value;
     }
     let value = map[key];
-    if (value === undefined) {
-      return;
-    }
     // ! replace functions
     let retNode = value.body.body[0].argument;
     // ! call expression
@@ -641,6 +619,7 @@ const objDeobfMemberExpr = {
 function evalValue(left, right, op) {
   switch (op) {
     case "===":
+      return left == right;
     case "!==":
       return left != right;
   }
