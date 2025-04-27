@@ -4,8 +4,10 @@
   "description": "fork of twitter-tid-deobf",
   "main": "deobf.js",
   "scripts": {
-    "run": "node deobf.js source/a.js output/a.js && node deobf2.js output/a.js output/b.js",
-    "run2": "node deobf.js source/a.js output/a.js && node deobf2.js output/a.js output/b.js && node deobf.js output/b.js output/b.js && node deobf2.js output/b.js output/b.js"
+    "run:base": "node deobf.js source/a.js output/deobf.js",
+    "run:fork": "node deobf-fork.js source/a.js output/fork.js && node deobf-additional.js output/fork.js output/additional.js",
+    "run:fork2": "npm run run:fork && npm run run:fork:_",
+    "run:fork:_": "node deobf-fork.js output/additional.js output/additional2.js && node deobf-additional.js output/additional2.js output/additional2.js"
   },
   "author": "",
   "license": "ISC",
