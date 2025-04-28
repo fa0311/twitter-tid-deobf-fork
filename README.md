@@ -16,11 +16,13 @@ JSON_URL="https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/re
 curl -s $JSON_URL | jq -r '.["ondemand.s"]' | xargs curl -s -o response.html
 ```
 
-Run
+## Installation and Running
 
-```shell
-npm install
-npm run run2
+```bash
+npm install # Install dependencies
+npm run run:base # Original implementation by obfio
+npm run run:fork # Forked implementation by fa0311
+npm run run:additional # Implementation by fa0311 including additional features
 ```
 
 Run base `obfio/twitter-tid-deobf`
