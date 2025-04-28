@@ -24,10 +24,3 @@ npm run run:base # Original implementation by obfio
 npm run run:fork # Forked implementation by fa0311
 npm run run:additional # Implementation by fa0311 including additional features
 ```
-
-Run base `obfio/twitter-tid-deobf`
-
-```shell
-npm --prefix base install
-npm --prefix base run run
-```
