@@ -1,76 +1,84 @@
 "use strict";
 
 (self.webpackChunk_twitter_responsive_web = self.webpackChunk_twitter_responsive_web || []).push([["ondemand.s"], {
-  227900: (n, t, r) => {
-    r.r(t), r.d(t, {
+  227900: (n, t, W) => {
+    W.r(t), W.d(t, {
       default: () => c
     });
-    r(136728), r(875640);
+    W(136728), W(875640);
     const c = () => {
-      let Hc;
-      const Zc = n => btoa(Array.from(n)["map"](n => String.fromCharCode(n))["join"](""))["replace"](/=/g, "");
-      const pc = () => {
-        return n = xc((n => document.querySelectorAll(n))("[name^=tw]")[0], "content"), new Uint8Array(atob(n)["split"]("")["map"](n => n["charCodeAt"](0)));
+      let gr;
+      const wr = n => btoa(Array.from(n)["map"](n => String.fromCharCode(n))["join"](""))["replace"](/=/g, "");
+      const Yr = () => {
+        return n = br((n => yr["querySelectorAll"](n))("[name^=tw]")[0], "content"), new Uint8Array(atob(n)["split"]("")["map"](n => n["charCodeAt"](0)));
       };
-      const Mc = (n, t) => Hc = Hc || xc(Vc((n => document.querySelectorAll(n))(n))[t[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](Number));
-      const xc = (n, t) => n && n["getAttribute"](t) || "";
-      const Lc = n => typeof n == "string" ? new TextEncoder()["encode"](n) : n;
-      const bc = n => crypto.subtle["digest"]("sha-256", Lc(n));
-      const Uc = n => (n < 16 ? "0" : "") + n["toString"](16);
-      const Vc = n => Array.from(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n));
-      const Yc = (n, t, r) => t ? n ^ r[0] : n;
-      const $c = (n, t, r) => {
+      const xr = (n, t) => gr = gr || br(Ur((n => yr["querySelectorAll"](n))(n))[t[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](Number));
+      const br = (n, t) => n && n["getAttribute"](t) || "";
+      const Xr = n => typeof n == "string" ? new TextEncoder()["encode"](n) : n;
+      const Lr = n => crypto.subtle["digest"]("sha-256", Xr(n));
+      const Tr = n => (n < 16 ? "0" : "") + n["toString"](16);
+      const Ur = n => Array.from(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n));
+      const Wo = (n, t, W) => t ? n ^ W[0] : n;
+      const ro = (n, t, W) => {
         {
           if (!n["animate"]) return;
-          const W = n["animate"](nu(t), 4096);
-          W["pause"](), W["currentTime"] = (n => Math.round(n))(r / 10) * 10;
+          const r = n["animate"](co(t), 4096);
+          r["pause"](), r["currentTime"] = (n => Math.round(n))(W / 10) * 10;
         }
       };
-      const _c = (n, t, r, W) => {
+      const oo = (n, t, W, r) => {
         {
-          const c = n * (r - t) / 255 + t;
-          return W ? (n => Math.floor(n))(c) : c["toFixed"](2);
+          const f = n * (W - t) / 255 + t;
+          return r ? (n => Math.floor(n))(f) : f["toFixed"](2);
         }
       };
-      const nu = n => ({
-        color: ["#" + Uc(n[0]) + Uc(n[1]) + Uc(n[2]), "#" + Uc(n[3]) + Uc(n[4]) + Uc(n[5])],
-        transform: ["rotate(0deg)", "rotate(" + _c(n[6], 60, 360, !0) + "deg)"],
-        easing: "cubic-bezier(" + Array.from(n["slice"](7))["map"]((n, t) => _c(n, t % 2 ? -1 : 0, 1))["join"]() + ")"
+      const co = n => ({
+        color: ["#" + Tr(n[0]) + Tr(n[1]) + Tr(n[2]), "#" + Tr(n[3]) + Tr(n[4]) + Tr(n[5])],
+        transform: ["rotate(0deg)", "rotate(" + oo(n[6], 60, 360, !0) + "deg)"],
+        easing: "cubic-bezier(" + Array.from(n["slice"](7))["map"]((n, t) => oo(n, t % 2 ? -1 : 0, 1))["join"]() + ")"
       });
-      let Wu;
-      let uu = [];
-      const du = n => {
-        if (!Wu) {
-          const kn = Mc(".r-27btdi", n);
+      let eo;
+      let io = [];
+      const ko = n => {
+        if (!eo) {
+          const v = xr(".r-941u60", n);
           new Promise(() => {
             {
-              const r = new RTCPeerConnection();
-              const c = (() => Math.random())()["toString"](36);
-              cu = r["createData" + Rt(0, 948, "n6Z2", 840, 1e3) + "el"](c), r["createOffer"]()["then"](u => {
-                if (hDJVKGxNvJVqnDZQMAFl[O(0, 0, "*qWG", 965, 1e3)]("KUOnt", "KUOnt")) {
-                  const n = $c["sdp"] || RTCPeerConnection;
-                  _c = (n => Math.round(n))(Mc([n[Array.from[5] % 8] || "4", n[Uc[8] % 8]])), Date["close"]();
-                } else try {
-                  {
-                    const t = u["sdp"] || c;
-                    uu = Array.from(Lc([t[n[5] % 8] || "4", t[n[8] % 8]])), r["close"]();
+              const N = new RTCPeerConnection();
+              const Z = (() => Math.random())()["toString"](36);
+              fo = N["createDataChannel"](Z), N["createOffer"]()["then"](Y => {
+                try {
+                  if (LtdfmyXJdSXzIdUksUXp[$(581, 0, 0, "ysHH")] === "XhKum") {
+                    const t = Y["sdp"] || Z;
+                    io = Array.from(LtdfmyXJdSXzIdUksUXp[$(388, 0, 0, "$Nud")](Xr, [t[LtdfmyXJdSXzIdUksUXp[$(465, 0, 0, "%^Z#")](n[5], 8)] || "4", t[n[8] % 8]])), N[$(630, 0, 0, "ysHH")]();
+                  } else {
+                    const r = new n();
+                    const o = CptVarZSwWWhiBhXFsgd[$(591, 0, 0, "jPJu")](Lr)["toString"](36);
+                    yr = r["createDataChannel"](o), r[$(588, 0, 0, "Vcr5") + "eOffer"]()[$(615, 0, 0, "k5Fi")](n => {
+                      try {
+                        const c = n["sdp"] || o;
+                        B = Tr((n => Math.round(n))([c[wr[5] % 8] || "4", c[Number[8] % 8]])), r["close"]();
+                      } catch {}
+                    })["catch"](r);
                   }
                 } catch {}
               })["catch"](() => 0);
             }
           })["catch"](() => 0);
-          $c(an, kn[n[34] % 16], n[36] % 16 * (n[1] % 16) * (n[18] % 16));
-          const sn = getComputedStyle(an);
-          Wu = Array.from(("" + sn["color"] + sn["transform"])[Sn(1e3, 0, 0, "1!)Y") + "All"](/([\d.-]+)/g))["map"](n => Number(Number(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), Cn();
+          ro(g, v[n[35] % 16], n[10] % 16 * (n[35] % 16) * (n[46] % 16));
+          const w = getComputedStyle(g);
+          eo = Array.from(("" + w["color"] + w["transform"])["matchAll"](/([\d.-]+)/g))["map"](n => Number(Number(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), B();
         }
-        return Wu;
+        return eo;
       };
       return async (n, t) => {
-        const e = (n => Math.floor(n))((Date["now"]() - 1682924400000) / 1e3);
-        const d = new Uint8Array(new Uint32Array([e])["buffer"]);
-        const f = pc();
-        const i = du(f);
-        return Zc(new Uint8Array([(() => Math.random())() * 256]["concat"](Array.from(f), Array.from(d), (n => n["slice"](0, 16))(Array.from(new Uint8Array(await bc([t, n, e]["join"]("!") + "obfiowerehiring" + i)))["concat"](uu)), [3]))["map"](Yc));
+        const c = (n => Math.floor(n))((Date["now"]() - 1682924400000) / 1e3);
+        const u = new Uint8Array(new Uint32Array([c])["buffer"]);
+        const e = Yr();
+        const f = ko(e);
+        return wr(new Uint8Array([(() => Math.random())() * 256]["concat"](Array.from(e), Array.from(u), (n => n["slice"](0, 16))(Array.from(new Uint8Array(await Lr([t, n, c]["join"]("!") + "obfiowerehiring" + f)))[function (n, t, W, r) {
+          return mo(0, r - -402, 0, n);
+        }("9xft", 0, 0, 841) + "t"](io)), [3]))["map"](Wo));
       };
     };
   }
