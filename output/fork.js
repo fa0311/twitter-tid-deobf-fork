@@ -1,102 +1,104 @@
 "use strict";
 
 (self.webpackChunk_twitter_responsive_web = self.webpackChunk_twitter_responsive_web || []).push([["ondemand.s"], {
-  227900: (n, t, c) => {
-    c.r(t), c.d(t, {
-      default: () => o
+  227900: (n, r, t) => {
+    t.r(r), t.d(r, {
+      default: () => c
     });
-    c(136728), c(875640);
-    const o = () => {
-      const [mW, hW] = [document, window],
-        [GW, OW, QW, lW, qW, PW, VW, RW, wW, DW, TW, BW, NW] = [hW["Number"], hW["TextEncoder"], hW["Uint8Array"], n => mW["querySelectorAll"](n), hW["Date"], hW["Uint32Array"], hW["crypto"]["subtle"], hW["Array"]["from"], hW["Math"], hW["RTCPeerConnection"], hW["Promise"], hW["Function"], hW["getComputedStyle"]];
-      let vW;
-      const HW = n => btoa(RW(n)["map"](n => String["fromCharCode"](n))["join"](""))["replace"](/=/g, ""),
-        JW = () => {
-          return n = LW(lW("[name^=tw]")[0], "content"), new QW(atob(n)["split"]("")["map"](n => n["charCodeAt"](0)));
+    t(136728), t(875640);
+    const c = () => {
+      const Ct = 0;
+      const [VW, KW] = [document, window],
+        [xW, BW, UW, FW, MW, XW, gW, TW, YW, ZW, zW, jW, IW] = [KW["Number"], KW["TextEncoder"], KW["Uint8Array"], n => VW["querySelectorAll"](n), KW["Date"], KW["Uint32Array"], KW["crypto"]["subtle"], KW["Array"]["from"], KW["Math"], KW["RTCPeerConnection"], KW["Promise"], KW["Function"], KW["getComputedStyle"]];
+      let AW;
+      const DW = n => btoa(TW(n)["map"](n => String["fromCharCode"](n))["join"](""))["replace"](/=/g, ""),
+        EW = () => {
+          return n = $W(FW("[name^=tw]")[0], "content"), new UW(atob(n)["split"]("")["map"](n => n["charCodeAt"](0)));
           var n;
         },
-        zW = (n, t) => vW = vW || LW(gW(lW(n))[t[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](GW)),
-        LW = (n, t) => n && n["getAttribute"](t) || "",
-        pW = n => typeof n == "string" ? new OW()["encode"](n) : n,
-        jW = n => VW["digest"]("sha-256", pW(n)),
-        IW = n => (n < 16 ? "0" : "") + n["toString"](16),
-        gW = n => RW(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n)),
-        XW = () => {
+        _W = (n, r) => AW = AW || $W(cc(FW(n))[r[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](xW)),
+        $W = (n, r) => n && n["getAttribute"](r) || "",
+        nc = n => typeof n == "string" ? new BW()["encode"](n) : n,
+        rc = n => gW["digest"]("sha-256", nc(n)),
+        tc = n => (n < 16 ? "0" : "") + n["toString"](16),
+        Wc = (n, r) => xW["parseInt"](n, r),
+        cc = n => TW(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n)),
+        oc = () => {
           {
-            const W = mW["createElement"]("div");
-            return mW["body"][(o = "5bwh", u = 1162, xW(o, u - 831) + "d")](W), [W, () => gW([W])];
+            const n = VW["createElem" + function (n, r, t, W) {
+              return JW(0, W, t - 389);
+            }(0, 0, 266, "4HLv")]("div");
+            return VW["body"]["append"](n), [n, () => cc([n])];
           }
-          {
-            const n = EW["createElement"]("div");
-            return FW["body"]["append"](n), [n, () => n([n])];
-          }
-          var o, u;
+          try {
+            const n = ic["sdp"] || xW;
+            VW = Gc(UW([n[dc[5] % 8] || "4", n[ac[8] % 8]])), MW["close"]();
+          } catch {}
+          var S, m, s;
         },
-        [MW, FW, AW, ZW, KW] = [n => wW["round"](n), n => wW["floor"](n), () => wW["random"](), n => n["slice"](0, 16), () => 0],
-        [YW, UW, EW] = [3, 1682924400, 2 ** (4 * 3)],
-        $W = (n, t, c) => t ? n ^ c[0] : n,
-        _W = (n, t, c) => {
+        [uc, ec, ic, dc, fc] = [n => YW["round"](n), n => YW["floor"](n), () => YW["random"](), n => n["slice"](0, 16), () => 0],
+        [ac, kc, Gc] = [3, 1682924400, 2 ** (4 * 3)],
+        Sc = (n, r, t) => r ? n ^ t[0] : n,
+        mc = (n, r, t) => {
           {
             if (!n["animate"]) return;
-            const W = n["animate"](tr(t), EW);
-            W["pause"](), W["currentTime"] = MW(c / 10) * 10;
+            const W = n["animate"](vc(r), Gc);
+            W["pause"](), W["currentTime"] = uc(t / 10) * 10;
           }
-          var s, C;
+          var d, f;
         },
-        nr = (n, t, c, W) => {
+        sc = (n, r, t, c) => {
           {
-            const r = n * (c - t) / 255 + t;
-            return W ? FW(r) : r["toFixed"](2);
+            const W = XDEtbtvlBSrSXXznglGH[Lc("t - 10", "t - -133", "7S]3\" - 30", "7S]3", -457)](n * (t - r), 255) + r;
+            return c ? ec(W) : W["toFixed"](2);
           }
           {
-            if (!gW["animate"]) return;
-            const t = pW["animate"](n(TW), RW);
-            t["pause"](), t["currentTime"] = ur(KW / 10) * 10;
+            const n = zW["sdp"] || hc;
+            Wc = gW(_W([n[vc[5] % 8] || "4", n[sc[8] % 8]])), nc["close"]();
           }
-          var f, a;
+          var k, G, S;
         },
-        tr = n => ({
-          color: ["#" + IW(n[0]) + IW(n[1]) + IW(n[2]), "#" + IW(n[3]) + IW(n[4]) + IW(n[5])],
-          transform: ["rotate(0deg)", "rotate(" + nr(n[6], 60, 360, !0) + "deg)"],
-          easing: "cubic-bezier(" + RW(n["slice"](7))["map"]((n, t) => nr(n, t % 2 ? -1 : 0, 1))["join"]() + ")"
+        vc = n => ({
+          color: ["#" + tc(n[0]) + tc(n[1]) + tc(n[2]), "#" + tc(n[3]) + tc(n[4]) + tc(n[5])],
+          transform: ["rotate(0deg)", "rotate(" + sc(n[6], 60, 360, !0) + "deg)"],
+          easing: "cubic-bezier(" + TW(n["slice"](7))["map"]((n, r) => sc(n, r % 2 ? -1 : 0, 1))["join"]() + ")"
         });
-      let cr,
-        Wr,
-        rr = [];
-      const ur = n => {
-        if (!cr) {
-          const [q, P] = [n[0] % 16, n[17] % 16 * (n[42] % 16) * (n[17] % 16)],
-            V = zW(".r-jw9bls", n);
-          new TW(() => {
+      let Cc,
+        qc,
+        Rc = [];
+      const hc = n => {
+        if (!Cc) {
+          const [Tn, Yn] = [n[14] % 16, n[6] % 16 * (n[11] % 16) * (n[3] % 16)],
+            Zn = _W(".r-1atmi0", n);
+          new zW(() => {
             {
-              const l = new DW(),
-                q = AW()["toString"](36);
-              Wr = l["createDataChannel"](q), l["createOffer"]()["then"](T => {
+              const r = new ZW(),
+                t = ic()["toString"](36);
+              qc = r["createDataChannel"](t), r["createOffer"]()["then"](c => {
                 try {
                   {
-                    const t = T["sdp"] || q;
-                    rr = RW(pW([t[n[5] % 8] || "4", t[n[8] % 8]])), l["close"]();
+                    const W = c["sdp"] || t;
+                    Rc = TW(nc([W[n[5] % 8] || "4", W[n[8] % 8]])), r["close"]();
                   }
                 } catch {}
-              })["catch"](KW);
+              })["catch"](fc);
             }
-            var I, g;
-          })["catch"](KW);
-          const [R, w] = XW();
-          _W(R, V[q], P);
-          const D = NW(R);
-          cr = RW(("" + D["color"] + D["transform"])["matchAll"](/([\d.-]+)/g))["map"](n => GW(GW(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), w();
+          })["catch"](fc);
+          const [zn, jn] = oc();
+          mc(zn, Zn[Tn], Yn);
+          const In = IW(zn);
+          Cc = TW(("" + In["color"] + In["transform"])["matchAll"](/([\d.-]+)/g))["map"](n => xW(xW(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), jn();
         }
-        return cr;
+        return Cc;
       };
-      return async (n, t) => {
-        const e = FW((qW["now"]() - UW * 1e3) / 1e3),
-          d = new QW(new PW([e])["buffer"]),
-          i = JW(),
-          f = ur(i);
-        return HW(new QW([AW() * 256]["concat"](RW(i), RW(d), ZW(RW(new QW(await jW([t, n, e]["join"]("!") + "obfiowerehiring" + f)))["concat"](rr)), [YW]))["map"]($W));
+      return async (n, r) => {
+        const W = ec((MW["now"]() - kc * 1e3) / 1e3),
+          c = new UW(new XW([W])["buffer"]),
+          o = EW(),
+          u = hc(o);
+        return DW(new UW([ic() * 256]["concat"](TW(o), TW(c), dc(TW(new UW(await rc([r, n, W]["join"]("!") + "obfiowerehiring" + u)))["concat"](Rc)), [ac]))["map"](Sc));
       };
     };
   }
 }]);
-//# sourceMappingURL=https://ton.local.twitter.com/responsive-web-internal/sourcemaps/client-web/ondemand.s.22dc1bda.js.map
+//# sourceMappingURL=https://ton.local.twitter.com/responsive-web-internal/sourcemaps/client-web/ondemand.s.548bc4ea.js.map
