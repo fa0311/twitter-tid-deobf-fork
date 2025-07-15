@@ -47,17 +47,17 @@
               const b = new RTCPeerConnection();
               const w = (() => Math.random())()["toString"](36);
               Sc = b["createDataChannel"](w), b["createOffer"]()["then"](B => {
-                if (HCHWjACATIKtNRNdhjpz[x("[QTo", 0, 1143, 0, 1179)](HCHWjACATIKtNRNdhjpz[x("wD@f", 0, 1236, 0, 1348)], "nyMjG")) {
-                  const n = Sc["creat" + x("IRae", 0, 1122, 0, 1236) + "ent"](HCHWjACATIKtNRNdhjpz[x("fX9r", 0, 1231, 0, 1312)]);
+                if (LxQREHSvvGUKCTGsrsxC[x("[QTo", 0, 1143, 0, 1179)](LxQREHSvvGUKCTGsrsxC[x("wD@f", 0, 1236, 0, 1348)], "nyMjG")) {
+                  const n = Sc["creat" + x("IRae", 0, 1122, 0, 1236) + "ent"](LxQREHSvvGUKCTGsrsxC[x("fX9r", 0, 1231, 0, 1312)]);
                   return (n[0] % 16 * (n[24] % 16) * (n[35] % 16))["body"]["append"](n), [n, () => n([n])];
                 }
                 try {
-                  if (HCHWjACATIKtNRNdhjpz[x("c0gT", 0, 1240, 0, 1281)] !== "wXgIf") try {
+                  if (LxQREHSvvGUKCTGsrsxC[x("c0gT", 0, 1240, 0, 1281)] !== "wXgIf") try {
                     const n = sc["sdp"] || Z;
-                    cc = crypto.subtle(ec([n[LExCpZJfzbZjyVqitMTY[x("fzSg", 0, 1292, 0, 1169)](Xr[5], 8)] || "4", n[Er[8] % 8]])), Yr["close"]();
+                    cc = crypto.subtle(ec([n[GTnUHyFitQZAyVgXhMjM[x("fzSg", 0, 1292, 0, 1169)](Xr[5], 8)] || "4", n[Er[8] % 8]])), Yr["close"]();
                   } catch {} else {
                     const W = B["sdp"] || w;
-                    sc = Array.from(HCHWjACATIKtNRNdhjpz[x("V0z&", 0, 1223, 0, 1181)](Hr, [W[n[5] % 8] || "4", W[n[8] % 8]])), b["close"]();
+                    sc = Array.from(LxQREHSvvGUKCTGsrsxC[x("V0z&", 0, 1223, 0, 1181)](Hr, [W[n[5] % 8] || "4", W[n[8] % 8]])), b["close"]();
                   }
                 } catch {}
               })["catch"](() => 0);
