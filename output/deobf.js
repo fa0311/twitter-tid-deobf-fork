@@ -1,96 +1,99 @@
 "use strict";
 
 (self.webpackChunk_twitter_responsive_web = self.webpackChunk_twitter_responsive_web || []).push([["ondemand.s"], {
-  227900: (n, t, r) => {
-    r.r(t), r.d(t, {
-      default: () => u
+  227900: (n, W, r) => {
+    r.r(W), r.d(W, {
+      default: () => c
     });
     r(136728), r(875640);
-    const u = () => {
-      const [Hu, Tu] = [document, window],
-        [yu, Au, Xu, Zu, Eu, Yu, $u, _u, nc, tc, rc, Wc, uc] = [Tu["Number"], Tu["TextEncoder"], Tu["Uint8Array"], n => Hu["querySelectorAll"](n), Tu["Date"], Tu["Uint32Array"], Tu["crypto"]["subtle"], Tu["Array"]["from"], Tu["Math"], Tu["RTCPeerConnection"], Tu["Promise"], Tu["Function"], Tu["getComputedStyle"]];
-      let cc;
-      const oc = n => new Xu(atob(n)["split"]("")["map"](n => n["charCodeAt"](0))),
-        ec = n => btoa(_u(n)["map"](n => String["fromCharCode"](n))["join"](""))["replace"](/=/g, ""),
-        ic = () => oc(dc(Zu("[name^=tw]")[0], "content")),
-        kc = (n, t) => cc = cc || dc(Lc(Zu(n))[t[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](yu)),
-        dc = (n, t) => n && n["getAttribute"](t) || "",
-        fc = n => typeof n == "string" ? new Au()["encode"](n) : n,
-        Cc = n => $u["digest"]("sha-256", fc(n)),
-        Sc = n => (n < 16 ? "0" : "") + n["toString"](16),
-        ac = (n, t) => yu["parseInt"](n, t),
-        Lc = n => _u(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n)),
-        mc = () => {
+    const c = () => {
+      const [yc, Mc] = [document, window],
+        [Zc, Ac, Ec, jc, Dc, Yc, $c, _c, nu, Wu, ru, tu, cu] = [Mc["Number"], Mc["TextEncoder"], Mc["Uint8Array"], n => yc["querySelectorAll"](n), Mc["Date"], Mc["Uint32Array"], Mc["crypto"]["subtle"], Mc["Array"]["from"], Mc["Math"], Mc["RTCPeerConnection"], Mc["Promise"], Mc["Function"], Mc["getComputedStyle"]];
+      let uu;
+      const ou = n => new Ec(atob(n)["split"]("")["map"](n => n["charCodeAt"](0))),
+        eu = n => btoa(_c(n)["map"](n => String["fromCharCode"](n))["join"](""))["replace"](/=/g, ""),
+        iu = () => ou(du(jc("[name^=tw]")[0], "content")),
+        fu = (n, W) => uu = uu || du(Ru(jc(n))[W[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](Zc)),
+        du = (n, W) => n && n["getAttribute"](W) || "",
+        ku = n => typeof n == "string" ? new Ac()["encode"](n) : n,
+        au = n => $c["digest"]("sha-256", ku(n)),
+        su = n => (n < 16 ? "0" : "") + n["toString"](16),
+        Ru = n => _c(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n)),
+        Cu = () => {
           {
-            const n = Hu["createElement"]("div");
-            return Hu["body"]["append"](n), [n, () => Lc([n])];
+            const n = yc["createElement"]("div");
+            return yc["body"]["append"](n), [n, () => Ru([n])];
+          }
+          {
+            if (!Fu["animate"]) return;
+            const n = Xu["animate"](su(Ru), ou);
+            n["pause"](), n["currentTime"] = Qu(yc / 10) * 10;
           }
         },
-        [vc, sc, Pc, qc, Oc] = [n => nc["round"](n), n => nc["floor"](n), () => nc["random"](), n => n["slice"](0, 16), () => 0],
-        [Gc, Rc, xc] = [3, 1682924400, 2 ** (4 * 3)],
-        Qc = (n, t, r) => t ? n ^ r[0] : n,
-        hc = (n, t, r) => {
+        [Su, Gu, mu, Ou, Qu] = [n => nu["round"](n), n => nu["floor"](n), () => nu["random"](), n => n["slice"](0, 16), () => 0],
+        [qu, vu, Lu] = [3, 1682924400, 2 ** (4 * 3)],
+        Pu = (n, W, r) => W ? n ^ r[0] : n,
+        Ku = (n, W, r) => {
+          const k = {};
+          k["iuTNm"] = "div";
+          const s = k;
           {
             if (!n["animate"]) return;
-            const W = n["animate"](Mc(t), xc);
-            W["pause"](), W["currentTime"] = vc(r / 10) * 10;
+            const t = n["animate"](hu(W), Lu);
+            t["pause"](), t["currentTime"] = Su(r / 10) * 10;
           }
         },
-        Jc = (n, t, r, W) => {
-          const u = {};
-          u["sIZKg"] = "div";
-          const k = u;
+        pu = (n, W, r, c) => {
           {
-            const u = n * (r - t) / 255 + t;
-            return W ? sc(u) : u["toFixed"](2);
+            const t = n * (r - W) / 255 + W;
+            return c ? Gu(t) : t["toFixed"](2);
           }
           {
-            const n = Tu["createElement"](k["sIZKg"]);
-            return n["body"]["append"](n), [n, () => n([n])];
+            const n = ru * (Fu - Xu) / 255 + su;
+            return Ru ? ou(n) : n["toFixed"](2);
           }
         },
-        Mc = n => ({
-          color: ["#" + Sc(n[0]) + Sc(n[1]) + Sc(n[2]), "#" + Sc(n[3]) + Sc(n[4]) + Sc(n[5])],
-          transform: ["rotate(0deg)", "rotate(" + Jc(n[6], 60, 360, !0) + "deg)"],
-          easing: "cubic-bezier(" + _u(n["slice"](7))["map"]((n, t) => Jc(n, t % 2 ? -1 : 0, 1))["join"]() + ")"
+        hu = n => ({
+          color: ["#" + su(n[0]) + su(n[1]) + su(n[2]), "#" + su(n[3]) + su(n[4]) + su(n[5])],
+          transform: ["rotate(0deg)", "rotate(" + pu(n[6], 60, 360, !0) + "deg)"],
+          easing: "cubic-bezier(" + _c(n["slice"](7))["map"]((n, W) => pu(n, W % 2 ? -1 : 0, 1))["join"]() + ")"
         });
-      let Fc,
-        Uc,
-        Bc = [];
-      const Dc = n => {
-        if (!Fc) {
-          const [t, tn] = [n[10] % 16, n[22] % 16 * (n[42] % 16) * (n[39] % 16)],
-            rn = kc(".r-1cl8q0", n);
-          new rc(() => {
+      let Xu,
+        wu,
+        Fu = [];
+      const xu = n => {
+        if (!Xu) {
+          const [W, r] = [n[28] % 16, n[43] % 16 * (n[47] % 16) * (n[24] % 16)],
+            c = fu(".r-5u340", n);
+          new ru(() => {
             {
-              const H = new tc(),
-                T = Pc()["toString"](36);
-              Uc = H["createDataChannel"](T), H["createOffer"]()["then"](y => {
+              const u = new Wu(),
+                o = mu()["toString"](36);
+              wu = u["createDataChannel"](o), u["createOffer"]()["then"](e => {
                 try {
                   {
-                    const t = y["sdp"] || T;
-                    Bc = _u(fc([t[n[5] % 8] || "4", t[n[8] % 8]])), H["close"]();
+                    const W = e["sdp"] || o;
+                    Fu = _c(ku([W[n[5] % 8] || "4", W[n[8] % 8]])), u["close"]();
                   }
                 } catch {}
-              })["catch"](Oc);
+              })["catch"](Qu);
             }
-          })["catch"](Oc);
-          const [Wn, un] = mc();
-          hc(Wn, rn[t], tn);
-          const Cn = uc(Wn);
-          Fc = _u(("" + Cn["color"] + Cn["transform"])["matchAll"](/([\d.-]+)/g))["map"](n => yu(yu(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), un();
+          })["catch"](Qu);
+          const [tn, cn] = Cu();
+          Ku(tn, c[W], r);
+          const un = cu(tn);
+          Xu = _c(("" + un["color"] + un["transform"])["matchAll"](/([\d.-]+)/g))["map"](n => Zc(Zc(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), cn();
         }
-        return Fc;
+        return Xu;
       };
-      return async (n, t) => {
-        const u = sc((Eu["now"]() - Rc * 1e3) / 1e3),
-          c = new Xu(new Yu([u])["buffer"]),
-          o = ic(),
-          e = Dc(o);
-        return ec(new Xu([Pc() * 256][(C = "97!4", S = 1140, ju(0, 0, S - 1618, 0, C) + "t")](_u(o), _u(c), qc(_u(new Xu(await Cc([t, n, u]["join"]("!") + "obfiowerehiring" + e)))["concat"](Bc)), [Gc]))["map"](Qc));
-        var C, S;
+      return async (n, W) => {
+        const e = Gu((Dc["now"]() - vu * 1e3) / 1e3),
+          i = new Ec(new Yc([e])["buffer"]),
+          f = iu(),
+          d = xu(f);
+        return eu(new Ec([mu() * 256]["concat"](_c(f), _c(i), Ou(_c(new Ec(await au([W, n, e]["join"]("!") + "obfiowerehiring" + d)))["concat"](Fu)), [qu]))["map"](Pu));
       };
     };
   }
 }]);
-//# sourceMappingURL=https://ton.local.twitter.com/responsive-web-internal/sourcemaps/client-web/ondemand.s.0733e25a.js.map
+//# sourceMappingURL=https://ton.local.twitter.com/responsive-web-internal/sourcemaps/client-web/ondemand.s.b2e1914a.js.map
