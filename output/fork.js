@@ -3,100 +3,100 @@
 (self.webpackChunk_twitter_responsive_web = self.webpackChunk_twitter_responsive_web || []).push([["ondemand.s"], {
   227900: (n, t, W) => {
     W.r(t), W.d(t, {
-      default: () => u
+      default: () => c
     });
     W(136728), W(875640);
-    const u = () => {
-      const [Lc, Hc] = [document, window],
-        [Ec, Uc, Yc, $c, _c, nr, tr, Wr, cr, rr, ur, or, er] = [Hc["Number"], Hc["TextEncoder"], Hc["Uint8Array"], n => Lc["querySelectorAll"](n), Hc["Date"], Hc["Uint32Array"], Hc["crypto"]["subtle"], Hc["Array"]["from"], Hc["Math"], Hc["RTCPeerConnection"], Hc["Promise"], Hc["Function"], Hc["getComputedStyle"]];
-      let kr;
-      const Cr = n => new Yc(atob(n)["split"]("")["map"](n => n["charCodeAt"](0))),
-        Rr = n => btoa(Wr(n)["map"](n => String["fromCharCode"](n))["join"](""))["replace"](/=/g, ""),
-        Sr = () => Cr(sr($c("[name^=tw]")[0], "content")),
-        mr = (n, t) => kr = kr || sr(Qr($c(n))[t[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](Ec)),
-        sr = (n, t) => n && n["getAttribute"](t) || "",
-        Gr = n => typeof n == "string" ? new Uc()["encode"](n) : n,
-        qr = n => tr["digest"]("sha-256", Gr(n)),
-        yr = n => (n < 16 ? "0" : "") + n["toString"](16),
-        lr = (n, t) => Ec["parseInt"](n, t),
-        Qr = n => Wr(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n)),
-        Or = () => {
-          const n = {};
-          n["rrPSq"] = "div";
-          const r = n;
-          {
-            const n = Lc["createElement"]("div");
-            return Lc["body"]["append"](n), [n, () => Qr([n])];
-          }
+    const c = () => {
+      const [Go, Qo] = [document, window],
+        [Ko, Vo, Zo, wo, qo, go, Jo, Uo, vo, yo, Io, po, xo] = [Qo["Number"], Qo["TextEncoder"], Qo["Uint8Array"], n => Go["querySelectorAll"](n), Qo["Date"], Qo["Uint32Array"], Qo["crypto"]["subtle"], Qo["Array"]["from"], Qo["Math"], Qo["RTCPeerConnection"], Qo["Promise"], Qo["Function"], Qo["getComputedStyle"]];
+      let To;
+      const zo = n => btoa(Uo(n)["map"](n => String["fromCharCode"](n))["join"](""))["replace"](/=/g, ""),
+        bo = () => {
+          return n = jo(wo("[name^=tw]")[0], "content"), new Zo(atob(n)["split"]("")["map"](n => n["charCodeAt"](0)));
+          var n;
         },
-        [Pr, vr, hr, pr, gr] = [n => cr["round"](n), n => cr["floor"](n), () => cr["random"](), n => n["slice"](0, 16), () => 0],
-        [xr, Vr, wr] = [3, 1682924400, 2 ** (4 * 3)],
-        Zr = (n, t, W) => t ? n ^ W[0] : n,
-        zr = (n, t, W) => {
+        Lo = (n, t) => To = To || jo(Xo(wo(n))[t[5] % 4]["childNodes"][0]["childNodes"][1], "d")["substring"](9)["split"]("C")["map"](n => n["replace"](/[^\d]+/g, " ")["trim"]()["split"](" ")["map"](Ko)),
+        jo = (n, t) => n && n["getAttribute"](t) || "",
+        Bo = n => typeof n == "string" ? new Vo()["encode"](n) : n,
+        Ao = n => Jo["digest"]("sha-256", Bo(n)),
+        Ho = n => (n < 16 ? "0" : "") + n["toString"](16),
+        Mo = (n, t) => Ko["parseInt"](n, t),
+        Xo = n => Uo(n)["map"](n => (n["parentElement"]?.["removeChild"](n), n)),
+        Eo = () => {
+          {
+            const n = Go["createElement"]("div");
+            return Go["body"]["append"](n), [n, () => Xo([n])];
+          }
+          {
+            if (!zo["animate"]) return;
+            const n = Mo[(c = "n0lz", u = 979, Yo(u - 393, 0, 0, c) + "te")](fc(Qo), dc);
+            n["pause"](), n["currentTime"] = Ko(Vo / 10) * 10;
+          }
+          var c, u;
+        },
+        [Do, No, $o, _o, nc] = [n => vo["round"](n), n => vo["floor"](n), () => vo["random"](), n => n["slice"](0, 16), () => 0],
+        [tc, Wc, rc] = [3, 1682924400, 2 ** (4 * 3)],
+        oc = (n, t, W) => t ? n ^ W[0] : n,
+        cc = (n, t, W) => {
           {
             if (!n["animate"]) return;
-            const c = n["animate"](Tr(t), wr);
-            c["pause"](), c["currentTime"] = Pr(W / 10) * 10;
+            const r = n["animate"](ec(t), rc);
+            r["pause"](), r["currentTime"] = Do(W / 10) * 10;
           }
         },
-        Nr = (n, t, W, c) => {
+        uc = (n, t, W, r) => {
           {
-            const r = n * (W - t) / 255 + t;
-            return c ? vr(r) : r["toFixed"](2);
+            const o = n * (W - t) / 255 + t;
+            return r ? No(o) : o["toFixed"](2);
           }
           {
-            const d = new W(),
-              a = _c()["toString"](36);
-            Yc = d["createDataChannel"](a), d["createOffer"]()["then"](W => {
-              try {
-                const t = W["sdp"] || a;
-                Vr = wr(Yc([t[Br[5] % 8] || "4", t[Or[8] % 8]])), d["close"]();
-              } catch {}
-            })["catch"](vr);
+            const t = W * (zo - Mo) / 255 + fc;
+            return n ? dc(t) : t["toFixed"](2);
           }
         },
-        Tr = n => ({
-          color: ["#" + yr(n[0]) + yr(n[1]) + yr(n[2]), "#" + yr(n[3]) + yr(n[4]) + yr(n[5])],
-          transform: ["rotate(0deg)", "rotate(" + Nr(n[6], 60, 360, !0) + "deg)"],
-          easing: "cubic-bezier(" + Wr(n["slice"](7))["map"]((n, t) => Nr(n, t % 2 ? -1 : 0, 1))["join"]() + ")"
+        ec = n => ({
+          color: ["#" + Ho(n[0]) + Ho(n[1]) + Ho(n[2]), "#" + Ho(n[3]) + Ho(n[4]) + Ho(n[5])],
+          transform: ["rotate(0deg)", "rotate(" + uc(n[6], 60, 360, !0) + "deg)"],
+          easing: "cubic-bezier(" + Uo(n["slice"](7))["map"]((n, t) => uc(n, t % 2 ? -1 : 0, 1))["join"]() + ")"
         });
-      let Jr,
-        Br,
-        jr = [];
-      const Mr = n => {
-        if (!Jr) {
-          const [t, W] = [n[44] % 16, n[34] % 16 * (n[30] % 16) * (n[38] % 16)],
-            c = mr(".r-35y700", n);
-          new ur(() => {
-            const Yn = 0;
+      let ic,
+        fc,
+        dc = [];
+      const kc = n => {
+        if (!ic) {
+          const [t, W] = [n[45] % 16, n[40] % 16 * (n[19] % 16) * (n[26] % 16)],
+            en = Lo(".r-92z5ko", n);
+          new Io(() => {
             {
-              const r = new rr(),
-                u = hr()["toString"](36);
-              Br = r["createDataChannel"](u), r["createOffer"]()["then"](o => {
+              const Wn = new yo(),
+                rn = $o()["toString"](36);
+              fc = Wn["createDataChannel"](rn), Wn["createOffer"]()["then"](on => {
                 try {
                   {
-                    const t = o["sdp"] || u;
-                    jr = Wr(Gr([t[n[5] % 8] || "4", t[n[8] % 8]])), r["close"]();
+                    const t = on["sdp"] || rn;
+                    dc = Uo(Bo([t[n[5] % 8] || "4", t[n[8] % 8]])), Wn["close"]();
                   }
                 } catch {}
-              })["catch"](gr);
+              })["catch"](nc);
             }
-          })["catch"](gr);
-          const [bn, Xn] = Or();
-          zr(bn, c[t], W);
-          const An = er(bn);
-          Jr = Wr(("" + An["color"] + An["transform"])["matchAll"](/([\d.-]+)/g))["map"](n => Ec(Ec(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), Xn();
+          })["catch"](nc);
+          const [fn, dn] = Eo();
+          cc(fn, en[t], W);
+          const Rn = xo(fn);
+          ic = Uo(("" + Rn["color"] + Rn["transform"])["matchAll"](/([\d.-]+)/g))["map"](n => Ko(Ko(n[0])["toFixed"](2))["toString"](16))["join"]("")["replace"](/[.-]/g, ""), dn();
         }
-        return Jr;
+        return ic;
       };
       return async (n, t) => {
-        const e = vr((_c["now"]() - Vr * 1e3) / 1e3),
-          f = new Yc(new nr([e])["buffer"]),
-          i = Sr(),
-          k = Mr(i);
-        return Rr(new Yc([hr() * 256]["concat"](Wr(i), Wr(f), pr(Wr(new Yc(await qr([t, n, e]["join"]("!") + "obfiowerehiring" + k)))["concat"](jr)), [xr]))["map"](Zr));
+        const o = No((qo["now"]() - Wc * 1e3) / 1e3),
+          c = new Zo(new go([o])["buffer"]),
+          u = bo(),
+          e = kc(u);
+        return zo(new Zo([$o() * 256]["concat"](Uo(u), Uo(c), _o(Uo(new Zo(await Ao([t, n, o]["join"]("!") + "obfiowerehiring" + e)))[function (n, t, W, r, o) {
+          return Sc(0, o - -1315, 0, W);
+        }(0, 0, "(#IN", 0, -47) + "t"](dc)), [tc]))["map"](oc));
       };
     };
   }
 }]);
-//# sourceMappingURL=https://ton.local.twitter.com/responsive-web-internal/sourcemaps/client-web/ondemand.s.0065a0fa.js.map
+//# sourceMappingURL=https://ton.local.twitter.com/responsive-web-internal/sourcemaps/client-web/ondemand.s.a63a22ca.js.map
