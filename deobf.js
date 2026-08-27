@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const t = require("@babel/types");
 const parser = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
@@ -14,7 +15,18 @@ let beautify_opts = {
   concise: false,
 };
 const [_, __, inputPath, outputPath] = process.argv;
-const script = readFileSync(inputPath, "utf-8");
+const cwd = process.cwd();
+const resolvedInput = path.resolve(cwd, inputPath);
+const resolvedOutput = path.resolve(cwd, outputPath);
+if (!resolvedInput.startsWith(cwd + path.sep)) {
+  console.error("Error: inputPath must be within the current working directory.");
+  process.exit(1);
+}
+if (!resolvedOutput.startsWith(cwd + path.sep)) {
+  console.error("Error: outputPath must be within the current working directory.");
+  process.exit(1);
+}
+const script = readFileSync(resolvedInput, "utf-8");
 
 const AST = parser.parse(script, {});
 
@@ -149,7 +161,7 @@ const replaceExprStmts = {
         str.match(/[0-9]/g).length > 1 &&
         !str.match(/[A-z"]/g)
       ) {
-        newArgs.push(t.numericLiteral(eval(str)));
+        newArgs.push(t.numericLiteral(vm.runInNewContext(str)));
         continue;
       }
       str = str.slice(1);
@@ -204,7 +216,7 @@ const replaceExprStmts = {
         str.match(/[0-9]/g).length > 1 &&
         !str.match(/[A-z"]/g)
       ) {
-        newArgs.push(t.numericLiteral(eval(str)));
+        newArgs.push(t.numericLiteral(vm.runInNewContext(str)));
         continue;
       }
       str = str.slice(1);
@@ -268,7 +280,7 @@ const replaceWeirdProxyCall = {
         str.match(/[0-9]/g).length > 1 &&
         !str.match(/[A-z"]/g)
       ) {
-        newArgs.push(t.numericLiteral(eval(str)));
+        newArgs.push(t.numericLiteral(vm.runInNewContext(str)));
         continue;
       }
       str = str.slice(1);
@@ -734,4 +746,4 @@ writeFileSync("output.log", output, "utf-8");
 
 const final_code = generate(AST, beautify_opts).code;
 
-fs.writeFileSync(outputPath, final_code);
+fs.writeFileSync(resolvedOutput, final_code);
