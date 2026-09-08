@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const t = require("@babel/types");
 const parser = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
@@ -13,7 +14,11 @@ let beautify_opts = {
   minified: false,
   concise: false,
 };
-const [_, __, inputPath, outputPath] = process.argv;
+const [_, __, inputPath, outputPathArg] = process.argv;
+const outputPath = path.resolve(process.cwd(), outputPathArg);
+if (!outputPath.startsWith(process.cwd() + path.sep)) {
+  throw new Error("outputPath must resolve inside the current working directory");
+}
 const script = readFileSync(inputPath, "utf-8");
 
 const AST = parser.parse(script, {});
