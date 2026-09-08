@@ -18,7 +18,9 @@ const script = readFileSync(inputPath, "utf-8");
 
 const AST = parser.parse(script, {});
 
-var decryptFuncCtx = vm.createContext();
+var decryptFuncCtx = vm.createContext(undefined, {
+  codeGeneration: { strings: false, wasm: false },
+});
 var decryptCode = "";
 var decryptFuncName = "";
 
@@ -149,7 +151,7 @@ const replaceExprStmts = {
         str.match(/[0-9]/g).length > 1 &&
         !str.match(/[A-z"]/g)
       ) {
-        newArgs.push(t.numericLiteral(eval(str)));
+        newArgs.push(t.numericLiteral(Number(str)));
         continue;
       }
       str = str.slice(1);
@@ -204,7 +206,7 @@ const replaceExprStmts = {
         str.match(/[0-9]/g).length > 1 &&
         !str.match(/[A-z"]/g)
       ) {
-        newArgs.push(t.numericLiteral(eval(str)));
+        newArgs.push(t.numericLiteral(Number(str)));
         continue;
       }
       str = str.slice(1);
@@ -408,7 +410,11 @@ const deobfStrings = {
       // ! hopefully no binding will always mean that the function in question is `r`???
       try {
         path.replaceWith(
-          t.valueToNode(vm.runInContext(generate(node).code, decryptFuncCtx))
+          t.valueToNode(
+            vm.runInContext(generate(node).code, decryptFuncCtx, {
+              timeout: 5000,
+            })
+          )
         );
       } catch {}
       return;
@@ -445,7 +451,11 @@ const deobfStrings = {
     }
     // ! now we should have all the code we need
     try {
-      path.replaceWith(t.valueToNode(vm.runInContext(code, decryptFuncCtx)));
+      path.replaceWith(
+        t.valueToNode(
+          vm.runInContext(code, decryptFuncCtx, { timeout: 5000 })
+        )
+      );
     } catch (e) {}
   },
 };
@@ -727,7 +737,7 @@ traverse(AST, getStringDeobfFuncs);
 // ! some func names are the same as the main decrypt func name so it'll error when you try to deobf the strings
 traverse(AST, replaceInterceptingFuncNames);
 
-vm.runInContext(decryptCode, decryptFuncCtx);
+vm.runInContext(decryptCode, decryptFuncCtx, { timeout: 5000 });
 // ! finally we can decrypt/deobf our strings
 traverse(AST, deobfStrings);
 // ! now we need to concat strings so we can properly deobf the object obfuscation
